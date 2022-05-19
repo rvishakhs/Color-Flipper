@@ -5,11 +5,15 @@ const colorspan = document.querySelector("#colorspa")
 
 
 colorbtn.addEventListener('click', function(){
+function mycode(){
     const number = colorfliper();
     document.body.style.backgroundColor = colors[number];
     colorspan.textContent = colors[number];
+}
+mycode();
 })
 
 function colorfliper(){
     return Math.floor(Math.random()*colors.length);
 }
+
