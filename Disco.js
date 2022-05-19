@@ -13,7 +13,6 @@ const gradient = ["linear-gradient(to right top, #051937, #004d7a, #008793, #00b
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color")
 
-
 btn.addEventListener("click", function(){
 
 setInterval(discotimer, 80);
