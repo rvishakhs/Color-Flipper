@@ -13,6 +13,7 @@ function mycode(){
 mycode();
 })
 
+
 function colorfliper(){
     return Math.floor(Math.random()*colors.length);
 }
