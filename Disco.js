@@ -1,4 +1,4 @@
-const gradient = ["linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)", 
+const gradient = ["white","linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12)", 
 "linear-gradient(to left bottom, #051937, #004d7a, #008793, #00bf72, #a8eb12)",
 "radial-gradient(circle, #051937, #004d7a, #008793, #00bf72, #a8eb12)",
 "radial-gradient(circle, #e35c56, #ea2d6f, #df0098, #b300cc, #0a40ff)",
@@ -12,10 +12,14 @@ const gradient = ["linear-gradient(to right top, #051937, #004d7a, #008793, #00b
 ]
 const btn = document.getElementById("btn");
 const color = document.querySelector(".color")
+const stopbtn = document.getElementById("btn-stop")
+let condition = 0;
+let IntervelID; 
 
 btn.addEventListener("click", function(){
 
-setInterval(discotimer, 80);
+if (condition === 0){
+IntervelID = setInterval(discotimer, 80);
 
 function discotimer(){
     const number = RandumNum();
@@ -23,8 +27,17 @@ function discotimer(){
 }
 
 discotimer();
+
+} 
 }); 
 
 function RandumNum(){
     return Math.floor(Math.random()*gradient.length);
 }
+
+stopbtn.addEventListener("click", function(){
+    condition = 1;
+    clearInterval(IntervelID);
+    document.body.style.background = gradient[0];
+    condition = 0;
+})
